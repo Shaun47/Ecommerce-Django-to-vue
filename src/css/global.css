@@ -1,0 +1,22 @@
+/* Fonts */
+
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url(../fonts/Montserrat-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url(../fonts/Montserrat-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'FuturaHeavyBT';
+    src: url(../fonts/FuturaHeavyBT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sulatty';
+    src: url(../fonts/Sulatty.ttf) format('truetype');
+}

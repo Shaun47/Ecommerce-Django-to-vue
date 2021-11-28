@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+
+
+
+
+<script>
+    function show_respective_project() {
+        clickableslider = document.getElementsByClassName("hero-bot-slide");
+
+        populateit = document.getElementsByClassName("slider-description");
+
+        for (var i = 0; i < clickableslider.length; i++) {
+            clickableslider[i].setAttribute('data-index', i);
+        }
+        for (i = 0; i < clickableslider.length; i++) {
+            clickableslider[i].addEventListener("click", function () {
+                index = this.getAttribute("data-index");
+                populateit[index].style.display = "block";
+                for (var j = 0; j < populateit.length; j++) {
+                    if (j != index) {
+                        populateit[j].style.display = "none";
+                    }
+                }
+            });
+        }
+
+
+
+        var heroSlider = document.getElementsByClassName("hero-img-slide-core");
+
+        var populateChildren = document.getElementsByClassName("slider-description");
+
+        for (var i = 0; i < heroSlider.length; i++) {
+            heroSlider[i].setAttribute('data-index', i);
+        }
+
+
+
+        for (i = 0; i < heroSlider.length; i++) {
+            heroSlider[i].addEventListener("touchmove", function () {
+                index = this.getAttribute("data-index");
+                populateChildren[index].style.display = "block";
+                for (var j = 0; j < populateChildren.length; j++) {
+                    if (j != index) {
+                        populateChildren[j].style.display = "none";
+                    }
+                }
+            });
+        }
+
+        /** new part**/
+
+
+
+
+        /** new part**/
+
+
+    }
+    show_respective_project();
+</script>
