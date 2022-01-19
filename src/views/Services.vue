@@ -1,13 +1,16 @@
 <template>
+    <Navigation></Navigation>
     <startSection></startSection>
     <services></services>
+    <Footer></Footer>
 </template>
 
 
 <script>
     import startSection from '../components/services/startSection'
     import services from '../components/services/services'
-   
+    import Footer from '../components/footer'
+    import Navigation from '../components/Navigation'
 
 
     export default {
@@ -15,6 +18,8 @@
         components: {
             startSection,
             services,
+            Footer,
+            Navigation,
         },
         data() {
             return {

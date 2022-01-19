@@ -1,13 +1,17 @@
 <template>
+    <Navigation></Navigation>
     <HeroSection></HeroSection>
     <VideoSection></VideoSection>
     <chooseUs></chooseUs>
     <product></product>
     <callRequest></callRequest>
+    <Footer></Footer>
 </template>
 
 
 <script>
+    import Footer from '../components/footer'
+    import Navigation from '../components/Navigation'
     import HeroSection from '../components/index/herosection'
     import VideoSection from '../components/index/videoSection'
     import chooseUs from '../components/index/chooseUs'
@@ -21,6 +25,8 @@
             chooseUs,
             product,
             callRequest,
+            Navigation,
+            Footer,
         },
         data() {
             return {
