@@ -28,12 +28,18 @@
             Navigation,
             Footer,
         },
+        mounted: function () {
+       
+        },
         data() {
             return {
-                test: "I am testing",
+                
             }
 
         },
+        methods:{
+
+        }
 
 
     }

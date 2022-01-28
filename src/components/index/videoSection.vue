@@ -6,7 +6,7 @@
                 <img src="img/Group 190.png" class="img-fluid why-img" alt="" />
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 why-different">
-                <h1>Why we are different than the Rest</h1>
+                <h1>{{title}}</h1>
                 <p>
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                     The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
@@ -27,16 +27,35 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'VideoSection',
   props: {
     msg: String
-  },
-  data(){
+  }, 
+    data(){
       return {
-
+          title: "",
+          paragraph: ""
       }
-  }
+  },      
+  mounted: function () {
+      let $this = this;
+        axios.get('/home/different')
+    .then(function (response) {
+         
+       $this.title = response.data[0].title;
+        $this.paragraph = response.data[0].description;
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+  },
+
+    methods:{
+
+    }
 }
 </script>
 
