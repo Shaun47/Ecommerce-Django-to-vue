@@ -108,7 +108,7 @@ export default {
     .wave {
         position: relative;
         left: 0;
-        top: -140.517px;
+        top: -138.517px;
         margin-bottom: -140.517px;
     }
 

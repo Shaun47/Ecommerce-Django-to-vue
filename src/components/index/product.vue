@@ -4,42 +4,13 @@
     <div class="container">
         <div class="row text-center top-products-row">
             <h1>Our Top Products</h1>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <img src="img/product1.png" class="img-fluid" alt="" />
-                <h4>Garment Rags</h4>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" v-for="product in products" :key="product.id">
+                <img :src="product.img" class="img-fluid" alt="" />
+                <h4>{{product.title}}</h4>
                 <a href="request_sample.html" class="btn order">Order Now</a>
                 <a href="product.html" class="btn detail">Details</a>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <img src="img/product2.png" class="img-fluid" alt="" />
-                <h4>Garment Rags</h4>
-                <a href="request_sample.html" class="btn order">Order Now</a>
-                <a href="product.html" class="btn detail">Details</a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <img src="img/product3.png" class="img-fluid" alt="" />
-                <h4>Garment Rags</h4>
-                <a href="request_sample.html" class="btn order">Order Now</a>
-                <a href="product.html" class="btn detail">Details</a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <img src="img/product4.png" class="img-fluid" alt="" />
-                <h4>Garment Rags</h4>
-                <a href="request_sample.html" class="btn order">Order Now</a>
-                <a href="product.html" class="btn detail">Details</a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <img src="img/product5.png" class="img-fluid" alt="" />
-                <h4>Garment Rags</h4>
-                <a href="request_sample.html" class="btn order">Order Now</a>
-                <a href="product.html" class="btn detail">Details</a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <img src="img/product6.png" class="img-fluid" alt="" />
-                <h4>Garment Rags</h4>
-                <a href="request_sample.html" class="btn order">Order Now</a>
-                <a href="product.html" class="btn detail">Details</a>
-            </div>
+
 
         </div>
     </div>
@@ -47,6 +18,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'product',
   props: {
@@ -54,9 +27,19 @@ export default {
   },
   data(){
       return {
-
+          products: ""
       }
-  }
+  },
+  mounted: function () {
+      let $this = this;
+        axios.get('/home/top-product')
+    .then(function (response) {
+       $this.products = response.data;
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+  },
 }
 </script>
 

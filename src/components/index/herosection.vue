@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 img banner-image vh-100">
                 <div class="banner-title">
-                    <h3>Your No.1 Rag Supplier With Unbeatable Rags</h3>
-                    <p>Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <h3>{{title}}</h3>
+                    <p>{{paragraph}}</p>
                     <a href="services.html" type="button" class="btn btn-danger services">Our Services</a>
                 </div>
 
@@ -49,6 +49,9 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+
 export default {
   name: 'HeroSection',
   props: {
@@ -56,9 +59,19 @@ export default {
   },
   data(){
       return {
-         
+          title: "",
+          paragraph: ""
       }
-  }
+  },
+  mounted: function () {
+      let $this = this;
+        axios.get('/banner/home-banner')
+    .then(function (response) {
+       $this.title = response.data[0].title;
+        $this.paragraph = response.data[0].paragraph;
+    })
+   
+  },
 }
 </script>
 
@@ -88,7 +101,7 @@ export default {
     .wave {
         position: relative;
         left: 0;
-        top: -140.517px;
+        top: -138.517px;
         margin-bottom: -140.517px;
     }
 

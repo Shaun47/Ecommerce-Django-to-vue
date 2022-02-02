@@ -103,9 +103,9 @@ import axios from 'axios';
         .then(function (response) {
            router.push({name: "Home"})
             console.log(response);
-            window.localStorage.setItem('accesstoken', response.data.access);
-            window.localStorage.setItem('refreshtoken', response.data.refresh);
-            window.localStorage.setItem('loggedIn', 'true');
+            window.localStorage.setItem('Ragaccesstoken', response.data.access);
+            window.localStorage.setItem('Ragrefreshtoken', response.data.refresh);
+            window.localStorage.setItem('RagloggedIn', 'true');
         })
         .catch(function (error) {
             console.log(error);

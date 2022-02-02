@@ -58,7 +58,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  let login = window.localStorage.getItem('loggedIn');
+  let login = window.localStorage.getItem('RagloggedIn');
   if (to.meta.requiresAuth && !login) {
   next('/login');
   } else if(to.name == "Login" && login){

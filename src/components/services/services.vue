@@ -34,7 +34,7 @@
             </div>
             <div class="col-lg-9 col-md-8 col-sm-8 description">
                 <p>
-                    We provide Final Pack service (2/5/10/25 LBS/Kgs) as our customers’ requirement. Also have regular/customized compressed bale pack (100/200/300 lbs)
+                    We provide Final Pack service (2/5/10/25 LBS/Kgs) as our customersï¿½ requirement. Also have regular/customized compressed bale pack (100/200/300 lbs)
                     Depending on the customer need. We also do 5Kg Poly pack and (5x10) 50kg bale.
                 </p>
             </div>
@@ -91,6 +91,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'services',
   props: {
@@ -98,9 +100,28 @@ export default {
   },
   data(){
       return {
-          name:"shaun",
+          shipment:"",
+          packaging: "",
+          customer_service: "",
+          payment_option: "",
+          delivery_option: ""
       }
+  },     
+  mounted: function () {
+      let $this = this;
+        axios.get('/services')
+    .then(function (response) {
+         
+        $this.shipment = response.data[0].regular_shipment;
+        $this.packaging = response.data[0].packaging;
+        $this.packaging = response.data[0].customer_service;
+        $this.packaging = response.data[0].payment_option;
+        $this.packaging = response.data[0].delivery_option;
+        
+
+    })
   }
+
 }
 </script>
 

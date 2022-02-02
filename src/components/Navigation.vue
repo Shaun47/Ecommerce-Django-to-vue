@@ -58,7 +58,7 @@
 </template>
 
 <script>
-    import axios from 'axios'
+
 
     export default {
           name: 'Navigation',
@@ -72,55 +72,7 @@
 
               }
           },
-          mounted() {
-              this.getNav();
-              this.getSubNav();
-            //   this.setTestCookie(7,"test2","shaunCookietttt");
-            //   this.getCookie("test2");
-           },
-           methods: {
-                getNav() {
-                    axios.get('http://127.0.0.1:8000/navigation/menu/').then((response) => {
-                     
-                        this.menus = response.data;
-                    }).catch((error) => {
-                        console.log(error)
-                    })
 
-               },
-                 
-               getSubNav() {
-                   axios.get('http://127.0.0.1:8000/navigation/drop-menu/').then((response) => {
-                       
-                       this.subMenus = response.data;
-                   }).catch((error) => {
-                       console.log(error)
-                   })
-               },
-
-            //    setTestCookie(exdays,cname,cvalue){
-            //         const d = new Date();
-            //         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            //         let expires = "expires="+d.toUTCString();
-            //         // document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;HttpOnly="+true;
-            //         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;HttpOnly;samesite=None;Secure=true;";
-            //    },
-            //    getCookie(cname) {
-            //     let name = cname + "=";
-            //     let ca = document.cookie.split(';');
-            //     for(let i = 0; i < ca.length; i++) {
-            //         let c = ca[i];
-            //         while (c.charAt(0) == ' ') {
-            //         c = c.substring(1);
-            //         }
-            //         if (c.indexOf(name) == 0) {
-            //         // return c.substring(name.length, c.length);
-            //         console.log(c.substring(name.length, c.length));
-            //         }
-            //     }
-            //     return "";
-            //     },
-        }
     }
 </script>
 
