@@ -4,7 +4,7 @@
     <section class="container mt-5">
         <div class="row">
             <div class="col-12 categoryHeading my-5 p-2">
-                <h3 class="ms-3">Premium Quality (Japan Grade)</h3>
+                <h3 class="ms-3">Premium Quality</h3>
             </div>
 
 

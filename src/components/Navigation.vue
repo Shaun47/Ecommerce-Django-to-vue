@@ -21,20 +21,10 @@
                             <i class="icon-user fa-fw"></i> About Us
                         </router-link>
                     </li>
-                    <li class="nav-item dropdown" >
-                        <a class="nav-link nav-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          
-                                <li>
-                                    <a class="dropdown-item" href="product.html">product 1</a>
-                                </li>
-                          
-                            
-                            
-                            
-                        </ul>
+                    <li class="nav-item " >
+                        <router-link :to="{ name: 'Product'}" class="nav-link nav-color" aria-current="page">
+                            <i class="icon-user fa-fw"></i> Product
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link :to="{ name: 'Services'}" class="nav-link nav-color" aria-current="page">
